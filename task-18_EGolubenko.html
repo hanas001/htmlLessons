@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+<!--  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">-->
+  <style>
+    body{
+      font-family: Helvetica;
+    }
+    h1{
+      text-align: center;
+    }
+    .outer{
+      display: flex;
+      flex-direction: row;
+      justify-content: space-around;
+    }
+    img{
+      width: 100%;
+      height: auto;
+
+    }
+    .image{
+      opacity: 0.9;
+    }
+    .left{
+      width: 60%;
+      display: flex;
+      flex-direction: column;
+      align-content: space-around;
+    }
+    .right{
+      display: flex;
+      flex-direction: column;
+      align-content: space-around;
+    }
+    .options{
+      margin-bottom: 20px;
+      /*padding-bottom: 5px;*/
+    }
+
+  </style>
+  <title>Изучаем HTML. Задание 18. Фоторедактор</title>
+</head>
+<body>
+<h1>Редактор картинок</h1>
+<div class="outer">
+  <div class="left">
+    <div class="image">
+      <img src="images/06.jpeg">
+    </div>
+    <input class="url" placeholder="Введите URL адрес картинки">
+    <button class="download">загрузить</button>
+  </div>
+
+  <div class="right">
+    <form class="options">
+      <div>
+        <input id="invert"
+               name="opt"
+               type="radio"
+               value="Инверсия">
+        <label for="invert">Инверсия (негатив картинки)</label>
+      </div>
+
+      <div>
+        <input id="grey"
+               name="opt"
+               type="radio"
+               value="Серый">
+        <label for="grey">Оттенки серого</label>
+      </div>
+
+      <div>
+        <input id="bw"
+               name="opt"
+               type="radio"
+               value="ЧБ">
+        <label for="invert">Черно-белый вариант</label>
+      </div>
+    </form>
+
+    <div class="opacity-picture">
+    <form>
+      <label>Прозрачность</label>
+      <input type="range" name="bgopacity" id="bgopacity" value="100" min="0" max="100" step="1" onchange="rangevalue.value=value">
+      <output id="rangevalue">100</output>
+    </form>
+    </div>
+
+    <button class="reset">сбросить</button>
+  </div>
+</div>
+
+  <script>
+    let bgopacity = document.querySelector("#bgopacity")
+    let image = document.getElementById("image")
+    // let opacitySlider = document.querySelector("#")
+
+    function changeOpacity(){
+      console.log(bgopacity.value() * '0.1')
+      image.style.opacity = bgopacity.value()
+    }
+
+    bgopacity.addEventListener('change', changeOpacity)
+  </script>
+
+</body>
+</html>

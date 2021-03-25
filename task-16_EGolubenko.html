@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <style>
+    body{
+      background-color: #ffff;
+    }
+  </style>
+  <title>Изучаем HTML. Задание 16. Поменять цвет страницы</title>
+</head>
+<body id="background">
+  <p1>Перезагрузись</p1>
+
+  <script>
+     let backColor = document.getElementById("background")
+     backColor.style.backgroundColor = "#" + changeColor()
+
+    function changeColor(){
+      let randomColor = Math.floor(Math.random()*16777215).toString(16)
+      let randomColorRed = Math.floor(Math.random()*255).toString(16)
+      let randomColorGreen = Math.floor(Math.random()*255).toString(16)
+      let randomColorBlue = Math.floor(Math.random()*255).toString(16)
+
+      backColor.style.backgroundColor = "#" + randomColorRed + randomColorGreen + randomColorBlue
+      console.log(randomColor)
+    }
+
+    backColor.addEventListener("click", changeColor)
+  </script>
+
+</body>
+</html>

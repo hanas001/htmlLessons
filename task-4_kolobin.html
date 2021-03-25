@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Фото-галерея</title>
+    <style>
+        h1 {text-align: center}
+        img {
+            width: 100%;
+            }
+        #little {
+            display: flex;
+            flex-flow: row wrap;
+        }
+        .image {
+            height: 60px;
+            width: 60px;
+            margin-right: 2px;
+            margin-bottom: 2px;
+            cursor: pointer;
+        }
+        .container {
+            max-height: 600px;
+            max-width: 800px;
+            margin: 0 auto;
+        }  
+    </style>
+</head>
+<body>
+    <h1>Фото-галерея</h1>
+    <div class="container"><img id="big" src="img/icon-01.jpg" alt="1"></div>
+    <div id="little">
+    <img class="image" src="img/icon-02.jpg" alt="2">
+    <img class="image" src="img/icon-03.jpg" alt="3">
+    <img class="image" src="img/icon-04.jpg" alt="4">
+    <img class="image" src="img/icon-05.jpg" alt="5">
+    <img class="image" src="img/icon-06.jpg" alt="6">
+    <img class="image" src="img/icon-07.jpg" alt="7">
+    <img class="image" src="img/icon-08.jpg" alt="8">
+    <img class="image" src="img/icon-09.jpg" alt="9">
+    <img class="image" src="img/icon-10.jpg" alt="10">
+    <img class="image" src="img/icon-11.jpg" alt="11">
+    <img class="image" src="img/icon-12.jpg" alt="12">
+    <img class="image" src="img/icon-13.jpg" alt="13">
+    <img class="image" src="img/icon-14.jpg" alt="14">
+    <img class="image" src="img/icon-15.jpg" alt="15">
+    <img class="image" src="img/icon-16.jpg" alt="16">
+    <img class="image" src="img/icon-17.jpg" alt="17">
+    <img class="image" src="img/icon-18.jpg" alt="18">
+    <img class="image" src="img/icon-19.jpg" alt="19">
+    <img class="image" src="img/icon-20.jpg" alt="20">
+    <img class="image" src="img/icon-21.jpg" alt="21">
+    <img class="image" src="img/icon-22.jpg" alt="22">
+    <img class="image" src="img/icon-23.jpg" alt="23">
+    <img class="image" src="img/icon-24.jpg" alt="24">
+    <img class="image" src="img/icon-25.jpg" alt="25">
+    <img class="image" src="img/icon-26.jpg" alt="26">
+    <img class="image" src="img/icon-27.jpg" alt="27">
+    <img class="image" src="img/icon-28.jpg" alt="28">
+    <img class="image" src="img/icon-29.jpg" alt="29">
+    <img class="image" src="img/icon-30.jpg" alt="30">
+    <img class="image" src="img/icon-31.jpg" alt="31">
+    </div>
+<script>
+        function show() {
+            let big = document.querySelector("#big");
+            big.src = event.target.src;
+        } 
+        let x = document.querySelector("#little");
+        x.addEventListener("click", show);      
+</script>
+</body>
+</html>

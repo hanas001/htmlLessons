@@ -1,0 +1,54 @@
+.googleBlue{
+    color:#0040FF;
+    font-family: Droid Sans;
+    font-size: 24px;
+}
+
+.googleRed{
+    color:red;
+    font-family: "Droid Sans";
+    font-size: 24px;
+}
+
+.googleOrange{
+    color:orange;
+    font-family: "Droid Sans";
+    font-size: 24px;
+}
+
+.googleGreen{
+    color:darkgreen;
+    font-family: "Droid Sans";
+    font-size: 24px;
+}
+
+.googlePlainText{
+    color:black;
+    font-family: "Droid Sans";
+    font-size: 20px;
+    margin-left: fill;
+}
+
+.yaRed{
+    color:red;
+    font-family: Arial;
+    font-size: 24px;
+}
+
+.yaPlainText{
+    color:black;
+    font-family: Arial;
+    font-size: 20px;
+}
+
+.vkBlue{
+    color:#2787F5;
+    font-family: "PT Serif";
+    font-size: 24px;
+}
+
+.vkBlack{
+    color:#000000;
+    font-family: "PT Serif";
+    font-size: 20px;
+}

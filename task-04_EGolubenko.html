@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <style>
+    h1{
+      font-size: 26px;
+      color: black;
+      font-family: Helvetica;
+      text-align: center;
+    }
+    .big-preview{
+      width: 95%;
+      height: 400px;
+      /*border: 1px solid black;*/
+      text-align: center;
+    }
+    .big-image {
+      height: 392px;
+      padding: 4px;
+    }
+
+    .story-line{
+      /*align-content: center;*/
+      /*text-align: center;*/
+
+      display: flex;
+      border: 1px solid black;
+      width: 95%;
+      height: 66px;
+    }
+    .inner-div{
+      display: flex;
+      padding: 1px;
+      border: 2px solid white;
+      width: 60px;
+      height: 60px;
+    }
+    .small-image{
+      width: 100%;
+    }
+
+  </style>
+  <title>Изучаем HTML. Задание 4. Галерея</title>
+</head>
+
+<h1>Фото-галерея</h1>
+<body>
+<div class="big-preview" >
+  <img class="big-image" id = "big" src="images/01.jpeg">
+</div>
+
+<div class="story-line" id = "small">
+
+  <div class="inner-div">
+    <img class="small-image" src="images/01.jpeg">
+  </div>
+
+    <div class="inner-div">
+    <img class="small-image" src="images/02.jpeg">
+    </div>
+
+
+  <div class="inner-div">
+    <img class="small-image" src="images/03.jpeg">
+  </div>
+
+
+  <div class="inner-div">
+    <img class="small-image" src="images/04.jpeg">
+  </div>
+
+  <div class="inner-div">
+    <img class="small-image" src="images/05.jpeg">
+  </div>
+
+  <div class="inner-div">
+    <img class="small-image" src="images/06.jpeg">
+  </div>
+
+  <div class="inner-div">
+    <img class="small-image" src="images/07.jpeg">
+  </div>
+
+  <div class="inner-div">
+    <img class="small-image" src="images/08.jpeg">
+  </div>
+
+  <div class="inner-div">
+    <img class="small-image" src="images/09.jpeg">
+  </div>
+
+  <div class="inner-div">
+    <img class="small-image" src="images/10.jpeg">
+  </div>
+
+  <div class="inner-div">
+    <img class="small-image" src="images/11.jpeg">
+  </div>
+
+  <div class="inner-div">
+    <img class="small-image" src="images/12.jpeg">
+  </div>
+
+  <div class="inner-div">
+    <img class="small-image" src="images/13.jpeg">
+  </div>
+
+  <div class="inner-div">
+    <img class="small-image" src="images/14.jpeg">
+  </div>
+
+  <div class="inner-div">
+    <img class="small-image" src="images/15.jpeg">
+  </div>
+
+
+</div>
+
+<script>
+  function showImage(){
+    let big = document.querySelector("#big")
+    big.src = event.target.src
+  }
+  document.querySelector("#small").addEventListener("click", showImage)
+  }
+</script>
+
+</body>
+</html>

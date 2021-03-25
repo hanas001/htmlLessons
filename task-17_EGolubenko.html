@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+  <style>
+    body{
+      font-family: Arial;
+    }
+    h1{
+
+    }
+    .top{
+      font-size: 14px;
+      background-color: grey;
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      border: black 1px solid;
+      width: 400px;
+      padding-right: 30px;
+      padding-left: 30px;
+      /*padding-top: 30px;*/
+      /*padding-bottom: 30px;*/
+    }
+    i{
+      font-size: 26px;
+      margin-top: 20px;
+      /*transform: rotate(0deg);*/
+    }
+    .arrow{
+      transform: rotate(0deg);
+      /*-ms-transform: rotate(0deg);*/
+    }
+
+    .bottom{
+      /*opacity: 0%;*/
+      font-size: 16px;
+      background-color: lightgrey;
+      display: flex;
+      flex-direction: column;
+      /*justify-content: space-between;*/
+      align-content: space-between;
+      border: black 1px solid;
+      width: 400px;
+      padding-right: 30px;
+      padding-left: 30px;
+      padding-top: 30px;
+      padding-bottom: 30px;
+    }
+    p1{
+      padding-bottom: 10px;
+    }
+
+  </style>
+  <title>Изучаем HTML. Задание 17. Стрелочка</title>
+</head>
+<body>
+  <div class="top" id="top">
+    <h1>Читать подробнее</h1>
+    <div class="arrow" id="arrow">
+      <i class="fas fa-chevron-up"></i>
+    </div>
+  </div>
+  <div class="bottom" id="bottom">
+    <p1>Преобразования CSS позволяют переводить, вращать, масштабировать и наклонять элементы.</p1>
+    <p1>Преобразование — это эффект, который позволяет элементу изменять форму, размер и положение.</p1>
+    <p1>CSS поддерживает 2D и 3D преобразования.</p1>
+  </div>
+  <script>
+     let arrow = document.getElementById("arrow")
+     let list = document.getElementById("bottom")
+     let topDiv = document.getElementById("top")
+
+     list.style.display = "none"
+
+     function rotateArrow(){
+       if (arrow.style.transform != "rotate(180deg)"){
+         arrow.style.transform = "rotate(180deg)"
+       }else{
+         arrow.style.transform = "rotate(0deg)"
+       }
+     }
+     function openList(){
+       if (list.style.display != "none"){
+         list.style.display = "none"
+       }else{
+         list.style.display = "flex"
+       }
+
+       // if (list.style.opacity === "0%"){
+       //  list.style.opacity = "100%"
+       // }
+       // else {
+       //   list.style.opacity = "0%"
+       // }
+     }
+      // arrow.addEventListener("click", rotateArrow)
+      // arrow.addEventListener("click", openList)
+
+     topDiv.addEventListener("click", rotateArrow)
+     topDiv.addEventListener("click", openList)
+
+  </script>
+
+</body>
+</html>

@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <style>
+    h1{
+      font-size: 26px;
+      color: black;
+      font-family: Helvetica;
+      text-align: center;
+    }
+    form{
+      text-align: left;
+      font-family: Helvetica;
+      font-size: 16px;
+      margin-left: 5%;
+      margin-top: 5%;
+    }
+    button{
+      font-size: 16px;
+    }
+  </style>
+  <title>Изучаем HTML. Задание 5. Выбор цвета</title>
+</head>
+
+<h1>Выбор цвета</h1>
+<body>
+<form>
+  <div>
+  <input
+          id="color-01"
+          name="color"
+          type="radio"
+          value="Серебристый"
+  >
+  <label for="color-01">Серебристый</label>
+  </div>
+
+  <div>
+    <input
+            id="color-02"
+            name="color"
+            type="radio"
+            value="Белый"
+    >
+    <label for="color-02">Белый</label>
+  </div>
+
+  <div>
+    <input
+            id="color-03"
+            name="color"
+            type="radio"
+            value="Черный"
+    >
+    <label for="color-03">Черный</label>
+  </div>
+
+  <div>
+    <input
+            id="color-04"
+            name="color"
+            type="radio"
+            value="Красный"
+    >
+    <label for="color-04">Красный</label>
+  </div>
+</form>
+
+<form>
+  <button id="ready" onclick="getColor2()">
+    Готово
+  </button>
+</form>
+
+<script>
+  function getColor(){
+    let color = document.getElementsByName("color")
+    for (let i=0; i < color.length; i++){
+      if (color[i].checked){
+        let result = color[i].value
+        alert(result)
+      }
+    }
+  }
+
+function getColor2(){
+  let res = document.querySelector('input[name="color"]:checked').value;
+  alert(res)
+}
+  // document.querySelector("#ready").addEventListener("click", getColor())
+
+</script>
+
+</body>
+</html>

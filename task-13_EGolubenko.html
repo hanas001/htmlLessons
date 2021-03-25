@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+
+  <style>
+    .outer{
+      width: 600px;
+      /*height: 300px;*/
+      border: black 1px solid;
+      display: flex;
+      justify-content: center;
+      /*padding-top: 100px;*/
+      /*padding-bottom: 140px;*/
+      padding: 50px;
+    }
+    button{
+      /*width: 60px;*/
+      padding-left: 20px;
+      padding-right: 20px;
+      height: 30px;
+      color: black;
+      background-color: lightgray;
+    }
+    .enter-one{
+      /*display: block;*/
+
+
+    }
+    .log-pass{
+      padding: 30px;
+      background-color: lightgray;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-around;
+    }
+    a{
+      color: black;
+      font-size: 12px;
+      /*padding-bottom: 15px;*/
+    }
+    input{
+      width: 300px;
+      height: 25px;
+      margin-bottom: 10px;
+    }
+    .enter-two{
+      display: none;
+    }
+    .buttons{
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+    }
+    .close{
+      margin-left: 330px;
+      margin-right: 2px;
+    }
+  </style>
+  <title>Изучаем HTML. Задание 13. Войти></title>
+</head>
+<body>
+<div class="outer">
+  <button id="enter-one" class="enter-one">Войти</button>
+
+  <div id="enter-two" class="enter-two">
+    <button id="close" class="close">X</button>
+    <div class="log-pass">
+      <label>
+        <input class="email" placeholder="Адрес Email">
+      </label><br>
+      <label>
+        <input class="pass" placeholder="Пароль">
+      </label><br>
+      <a href="#">Забыли пароль?</a><br>
+      <div class="buttons">
+        <button>Войти</button>
+        <button>Зарегистрироваться</button>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<script>
+  let buttonClose = document.getElementById("close")
+  let secondWindow = document.getElementById("enter-two")
+  let buttonEnter = document.getElementById("enter-one")
+
+  buttonClose.addEventListener("click", hide)
+
+  // buttonEnter.addEventListener("click", hide)
+  buttonEnter.addEventListener("click", show)
+
+  function hide(){
+    secondWindow.style.display = "none"
+    buttonEnter.style.display = "block"
+  }
+
+  function show(){
+    secondWindow.style.display = "block"
+    buttonEnter.style.display = "none"
+  }
+</script>
+</body>
+</html>

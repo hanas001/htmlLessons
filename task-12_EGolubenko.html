@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+<!--  <link rel="stylesheet" href="fontawesome-free-5.15.2-web/css/fontawesome.min.css">-->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+<!--  <link rel="stylesheet" href="fontawesome-free-5.15.2-web/css/all.css">-->
+  <style>
+    .outer{
+      display: flex;
+      flex-direction: column;
+      width: 960px;
+      margin: 0 auto;
+    }
+    header{
+      background-color: black;
+      display: flex;
+      align-items: center;
+      justify-content: space-around;
+      /*letter-spacing: 3px;*/
+      height: 100px;
+    }
+    h1{
+      font-family: Georgia,serif;
+      font-weight: normal;
+      color: #000000;
+      font-size: 26px;
+      text-transform: uppercase;
+      letter-spacing: 3px;
+      text-align: center;
+    }
+    .main{
+      display: flex;
+      flex-direction: row;
+      margin-top: 40px;
+      justify-content: space-between;
+      /*border: black solid 2px;*/
+    }
+
+    .columns{
+      padding-top: 10px;
+      padding-left: 7px;
+      padding-right: 7px;
+      background-color: #ffff;
+      font-family: Georgia;
+      font-weight: normal;
+      color: #282828;
+      display: flex;
+      flex-direction: column;
+      align-items: stretch;
+      /*border: red solid 2px;*/
+      width: 410px;
+    }
+
+    p1{
+      letter-spacing: 4px;
+      font-weight: lighter;
+      text-align: left;
+      font-size: 20px;
+    }
+    img{
+      padding-bottom: 39px;
+      object-fit: cover;
+      width: 100%;
+      height: 300px;
+
+    }
+    a{
+      text-decoration: none;
+      font-family: Georgia;
+      font-weight: normal;
+      color: #ffff;
+      font-size: 16px;
+      margin-left: 30px;
+      margin-right: 30px;
+      /*margin: 0 auto;*/
+      text-transform: uppercase;
+    }
+    .icons-section{
+      width: 140px;
+      display: flex;
+      align-items: center;
+      justify-content: space-around;
+    }
+    .icon-white{
+      width: 35px;
+      height: 35px;
+      background: white;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: black;
+
+    }
+  </style>
+  <title>Изучаем HTML. Задание 12. сайт с картинками и текстами></title>
+</head>
+<body>
+<div class="outer">
+
+  <header>
+        <a href="#">Главная</a>
+        <a href="#">Меню</a>
+        <a href="#">О нас</a>
+        <a href="#">Контакты</a>
+        <span class="icons-section">
+          <div class="icon-white"><i class="fab fa-instagram"></i></div>
+          <div class="icon-white"><i class="fab fa-facebook-f" aria-hidden="true"></i></div>
+          <div class="icon-white"><i class="fab fa-vk" aria-hidden="true"></i></div>
+        </span>
+  </header>
+
+  <div class="main">
+    <div class="columns">
+      <img src="bora-bora.jpg">
+      <h1>Заголовок</h1>
+      <p1>
+        Текст текст текст текст текст текст текст текст текст текст текст текст текст
+        текст текст текст текст текст текст текст текст текст текст текст текст
+      </p1>
+    </div>
+
+    <div class="columns">
+      <img src="bora-bora.jpg">
+      <h1>Заголовок</h1>
+      <p1>
+        Текст текст текст текст текст текст текст текст текст текст текст текст текст
+        текст текст текст текст текст текст текст текст текст текст текст текст
+      </p1>
+    </div>
+
+    <div class="columns">
+      <img src="bora-bora.jpg">
+      <h1>Заголовок</h1>
+      <p1>
+        Текст текст текст текст текст текст текст текст текст текст текст текст текст
+        текст текст текст текст текст текст текст текст текст текст текст текст
+      </p1>
+    </div>
+  </div>
+
+</div>
+</body>
+</html>

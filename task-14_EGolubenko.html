@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+  <style>
+    .outer{
+      /*border: black 1px solid;*/
+      display: flex;
+      justify-content: center;
+      margin-top: 30px;
+    }
+    button{
+      padding-left: 20px;
+      padding-right: 20px;
+      height: 30px;
+      color: white;
+      background-color: orange;
+    }
+    img{
+      max-width: 100%;
+      height: auto;
+    }
+    .image{
+      width: 70%;
+    }
+    .right-inner{
+      background-color: lightgrey;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      padding-top: 30px;
+      padding-bottom: 30px;
+      padding-left: 20px;
+      padding-right: 20px;
+      margin-bottom: 20px;
+      margin-left: 20px;
+    }
+    h1{
+      text-align: center;
+      background-color: white;
+    }
+    .options{
+      padding: 5px;
+      display: flex;
+      flex-direction: row;
+      justify-content: left;
+    }
+    p1{
+      padding-left: 20px;
+    }
+    p2{
+      margin: auto;
+      padding: 30px;
+    }
+  </style>
+  <title>Изучаем HTML. Задание 14></title>
+</head>
+<body>
+<p2>
+  Элегантная спальня с двуспальной кроватью оформлена в современном стиле с использованием мягких тонов и функциональных аксессуаров. собственная ванная комната, вешалка для одежды, подарочный набор, душ.
+</p2>
+<div class="outer">
+  <div class="image">
+    <img src="room/foto-2.jpg">
+  </div>
+
+  <div class="right-side">
+    <div class="right-inner"><button>
+      Забронируйте эту комнату
+    </button>
+    </div>
+    <div class="right-inner">
+      <h1>Услуги</h1>
+      <div class="options">
+      <i class="fas fa-tint"></i><p1>Собственная ванная комната с душевой кабиной</p1><br>
+      </div>
+      <div class="options">
+        <i class="fas fa-wifi"></i><p1>Бесплатный вай-фай</p1><br>
+      </div>
+      <div class="options">
+        <i class="fas fa-snowflake"></i><p1>Кондиционер / Отопление</p1><br>
+      </div>
+      <div class="options">
+        <i class="fas fa-lock"></i><p1>Сейф</p1><br>
+      </div>
+      <div class="options">
+        <i class="fas fa-glass-martini"></i><p1>Минибар</p1><br>
+      </div>
+      <div class="options">
+        <i class="fas fa-business-time"></i><p1>Просыпайся</p1><br>
+      </div>
+      <div class="options">
+        <i class="fas fa-phone"></i><p1>Телефон</p1><br>
+      </div>
+      <div class="options">
+        <i class="fas fa-tv"></i><p1>Телевизор с плоским экраном со спутниковыми каналами</p1>
+      </div>
+    </div>
+  </div>
+</div>
+</body>
+</html>
