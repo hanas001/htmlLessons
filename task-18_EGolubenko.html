@@ -15,13 +15,11 @@
       flex-direction: row;
       justify-content: space-around;
     }
-    img{
+    .image1{
+      opacity: 0.9;
       width: 100%;
       height: auto;
-
-    }
-    .image{
-      opacity: 0.9;
+      /*filter: grayscale(100%) invert(100%);*/
     }
     .left{
       width: 60%;
@@ -30,6 +28,8 @@
       align-content: space-around;
     }
     .right{
+      padding-left: 5%;
+      width: 33%
       display: flex;
       flex-direction: column;
       align-content: space-around;
@@ -47,19 +47,19 @@
 <div class="outer">
   <div class="left">
     <div class="image">
-      <img src="images/06.jpeg">
+      <img id="image1" class="image1" src="https://avatars.mds.yandex.net/get-zen_doc/1137439/pub_5ba2e56342ef5c00af0da936_5ba2e801a1b5b700ab3f2be6/scale_1200">
     </div>
-    <input class="url" placeholder="Введите URL адрес картинки">
-    <button class="download">загрузить</button>
+    <input id="imgUrl" class="url" placeholder="Введите URL адрес картинки">
+    <button id="imgDownload" class="download">загрузить</button>
   </div>
 
   <div class="right">
-    <form class="options">
+    <form id="options1" class="options">
       <div>
         <input id="invert"
                name="opt"
                type="radio"
-               value="Инверсия">
+               value="invert(100%)">
         <label for="invert">Инверсия (негатив картинки)</label>
       </div>
 
@@ -67,16 +67,16 @@
         <input id="grey"
                name="opt"
                type="radio"
-               value="Серый">
+               value="grayscale(100%)">
         <label for="grey">Оттенки серого</label>
       </div>
 
       <div>
-        <input id="bw"
+        <input id="blur"
                name="opt"
                type="radio"
-               value="ЧБ">
-        <label for="invert">Черно-белый вариант</label>
+               value="blur(5px)">
+        <label for="invert">Размыте по гаусу</label>
       </div>
     </form>
 
@@ -88,21 +88,62 @@
     </form>
     </div>
 
-    <button class="reset">сбросить</button>
+    <button id="reset1" class="reset">сбросить</button>
   </div>
 </div>
 
   <script>
-    let bgopacity = document.querySelector("#bgopacity")
-    let image = document.getElementById("image")
-    // let opacitySlider = document.querySelector("#")
+    let bgopacity = document.getElementById("bgopacity")
+    let bgopacityOutput = document.getElementById("rangevalue")
+    let image = document.getElementById("image1")
+
 
     function changeOpacity(){
-      console.log(bgopacity.value() * '0.1')
-      image.style.opacity = bgopacity.value()
+      let opacityNormalized = bgopacityOutput.value * '0.01'
+      // console.log(opacityNormalized)
+     image.style.opacity = opacityNormalized
     }
 
     bgopacity.addEventListener('change', changeOpacity)
+
+    let opt = document.getElementsByName("opt")
+    let choice = document.getElementById("options1")
+
+    function getOption(){
+      for (let i=0; i < opt.length; i++){
+        if (opt[i].checked){
+          let result = opt[i].value
+          // alert(result)
+          image.style. filter = result
+        }
+      }
+    }
+
+    choice.addEventListener('click', getOption)
+
+    let resetButton = document.getElementById("reset1")
+
+    function resetEdits(){
+      image.style.opacity = '1'
+      bgopacity.value = '100'
+      bgopacityOutput.value = '100'
+      image.style.filter = 'none'
+    }
+
+    resetButton.addEventListener('click', resetEdits)
+
+    let imageAddress = document.getElementById("imgUrl")
+    console.log("address field", imageAddress)
+    let buttonDownload = document.getElementById("imgDownload")
+
+    function insertUrl(){
+      // console.log("image src", image.src)
+      console.log("address field", imageAddress.value)
+      image.src = imageAddress.value
+    }
+
+    buttonDownload.addEventListener('click', insertUrl)
+
   </script>
 
 </body>

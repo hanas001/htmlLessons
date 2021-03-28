@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+<!--  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">-->
+  <style>
+    .settings{
+      width: 250px;
+      padding-left: 20px;
+      display: flex;
+      flex-direction: column;
+      justify-content: left;
+    }
+    body{
+      font-family: Helvetica;
+    }
+    h1{
+      text-align: left;
+    }
+    }
+    ul{
+      list-style: none;
+      /*margin: 5px 10px;*/
+    }
+    li{
+      margin: 10px 50px;
+      list-style: none;
+    }
+    hr{
+      alighn: center;
+      width: 95%;
+      size: 2px;
+      color: black;
+    }
+
+  </style>
+  <title>Изучаем HTML. Задание 19. Check boxes</title>
+</head>
+<body>
+<div id="settings" class="settings">
+  <h1>Настройки</h1>
+  <hr>
+  <h2>Тип кузова</h2>
+
+    <form id="bodyOptions1" class="options">
+     <div id="hatchbackDiv">
+      <ul>
+        <input id="hatchback"
+               name="hatchback"
+               type="checkbox"
+               value="hatchback">
+        <label for="hatchback">Хэтчбэк</label>
+      </ul>
+      <li>
+        <input id="2"
+               name="doorsHatchback"
+               type="checkbox"
+               value="2">
+        <label for="2">Две двери</label>
+      </li>
+      <li>
+        <input id="3"
+               name="doorsHatchback"
+               type="checkbox"
+               value="3">
+        <label for="3">Три двери</label>
+      </li>
+     </div>
+
+      <div id="sedanDiv">
+      <ul>
+        <input id="sedan"
+               name="sedan"
+               type="checkbox"
+               value="sedan">
+        <label for="sedan">Седан</label>
+      </ul>
+      <li>
+        <input id="4"
+               name="doorsSedan"
+               type="checkbox"
+               value="4">
+        <label for="4">Четыре двери</label>
+      </li>
+      <li>
+        <input id="5"
+               name="doorsSedan"
+               type="checkbox"
+               value="5">
+        <label for="5">Пять дверей</label>
+      </li>
+      <li>
+        <input id="other"
+               name="doorsSedan"
+               type="checkbox"
+               value="other">
+        <label for="other">Другое</label>
+      </li>
+      </div>
+
+    </form>
+
+  </div>
+</div>
+
+  <script>
+    let hatchbackDoors = document.getElementsByName("doorsHatchback")
+    let hatchback = document.getElementById("hatchback")
+    let sedanDoors = document.getElementsByName('doorsSedan')
+    let sedan = document.getElementById("sedan")
+    // hatchback.checked = false
+
+    function getHatchback(){
+      for (let i=0; i < hatchbackDoors.length; i++){
+        if (hatchbackDoors[i].checked){
+          // let result = opt[i].value
+          hatchback.checked = true;
+          hatchbackDoors[i].checked = true
+        }
+        else {
+          hatchback.checked = false;
+        }
+      }
+    }
+
+    function getSedan(){
+      for (let i=0; i < sedanDoors.length; i++){
+        if (sedanDoors[i].checked === true){
+          // let result = opt[i].value
+
+          // sedanDoors[i].checked = true
+          sedan.checked = true;
+        }
+        else {
+          sedan.checked = false;
+        }
+      }
+    }
+
+    function hatchbackMarkAll(){
+      if (hatchback.checked === true){
+        for (let i=0; i < hatchbackDoors.length; i++){
+          hatchbackDoors[i].checked = true;
+          // hatchback.checked = true
+          }
+        for (let i = 0; i < sedanDoors.length; i++) {
+          sedanDoors[i].checked = false;
+        }
+        sedan.checked = false
+        }
+      else{for (let i=0; i < hatchbackDoors.length; i++){
+        hatchbackDoors[i].checked = false;
+        hatchback.checked = false
+      }}
+    }
+
+    function sedanMarkAll(){
+      if (sedan.checked === true) {
+        for (let i = 0; i < sedanDoors.length; i++) {
+          sedanDoors[i].checked = true;
+        }
+      }
+      else{for (let i=0; i < sedanDoors.length; i++){
+        sedanDoors[i].checked = false;
+        sedan.checked = false
+      }}
+    }
+
+    function turnOffSedan(){
+      if (sedan.checked === true) {
+        for (let i = 0; i < hatchbackDoors.length; i++) {
+          hatchbackDoors[i].checked = false;
+        }
+        hatchback.checked = false
+      }
+      sedan.checked = false
+    }
+
+    function turnOffHatchback(){
+      if (hatchback.checked === true){
+        for (let i = 0; i < sedanDoors.length; i++) {
+          sedanDoors[i].checked = false;
+        }
+        sedan.checked = false
+      }
+      hatchback.checked = false
+    }
+
+    let bodyOptionsDiv = document.getElementById("bodyOptions1")
+
+
+
+    hatchback.addEventListener('click', hatchbackMarkAll)
+    sedan.addEventListener('click', sedanMarkAll)
+
+    let hatchbackDiv1 = document.getElementById('hatchbackDiv')
+    // hatchbackDiv1.addEventListener('click', turnOffSedan)
+    hatchbackDiv1.addEventListener('click', getHatchback)
+
+    let sedanDiv1 = document.getElementById('sedanDiv')
+    // sedanDiv1.addEventListener('click', turnOffHatchback)
+    sedanDiv1.addEventListener('click', getSedan)
+  </script>
+
+</body>
+</html>
