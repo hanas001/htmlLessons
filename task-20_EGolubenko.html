@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+<!--  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">-->
+  <style>
+      body{
+          font-family: Helvetica;
+          padding-left: 30px;
+          padding-top: 30px;
+      }
+      h1{
+          font-size: 24px;
+          text-align: left;
+      }
+      .top{
+          width: 350px;
+          display: flex;
+          flex-direction: row;
+          justify-content: space-between;
+          /*align-content: space-between;*/
+      }
+      .output{
+          width: 87%;
+          height: 40px;
+          font-size: 26px;
+      }
+      .bottom{
+          margin-top: 30px;
+          width: 350px;
+          display: flex;
+          flex-direction: column;
+          /*justify-content: space-around;*/
+          align-content: space-between;
+      }
+      .operations{
+          font-size: 20px;
+          background-color: orange;
+          width: 40px;
+          height: 40px;
+          margin-left: 5px;
+          margin-right: 5px;
+          margin-top: 5px;
+          margin-bottom: 5px;
+          border-radius: 7px;
+      }
+      .digits{
+          font-size: 20px;
+          background-color: lightgray;
+          width: 40px;
+          height: 40px;
+          margin-left: 5px;
+          margin-right: 5px;
+          margin-top: 5px;
+          margin-bottom: 5px;
+          border-radius: 7px;
+      }
+      .yellow{
+          background-color: orange;
+          border-radius: 7px;
+          width: 60px;
+          height: 45px;
+      }
+
+
+  </style>
+  <title>Изучаем HTML. Задание 20. Калькулятор</title>
+</head>
+<body>
+<h1>Обычный калькулятор</h1>
+<div class="top">
+<input id="output" class="output">
+<button id="del" class="yellow"><--</button>
+</div>
+
+<div id="bottom" class="bottom">
+    <div class="rows">
+        <button id="1" value="1" class="digits">1</button>
+        <button id="2" value="2" class="digits">2</button>
+        <button id="3" value="3" class="digits">3</button>
+        <button id="plus" value="+" class="operations">+</button>
+    </div>
+    <div class="rows">
+        <button id="4" value="4" class="digits">4</button>
+        <button id="5" value="5" class="digits">5</button>
+        <button id="6" value="6" class="digits">6</button>
+        <button id="minus" value="-" class="operations">-</button>
+    </div>
+    <div class="rows">
+        <button id="7" value="7" class="digits">7</button>
+        <button id="8" value="8" class="digits">8</button>
+        <button id="9" value="9" class="digits">9</button>
+        <button id="multiply" value="*" class="operations">*</button>
+    </div>
+    <div class="rows">
+        <button id="0" value="0" class="digits">0</button>
+        <button id="dot" value="." class="digits">.</button>
+        <button id="equals" value="=" class="operations">=</button>
+        <button id="divide" value="/" class="operations">/</button>
+    </div>
+</div>
+
+  <script>
+    let output = document.getElementById('output')
+    let keyGrab = document.getElementById('bottom')
+
+    function readOperation(){
+        // console.log(event.target.value)
+        let tmpInput = event.target.value
+        if (event.target.value !== undefined && event.target.value !== "="){
+            output.value += tmpInput
+        }
+    }
+
+    keyGrab.addEventListener('click', readOperation)
+
+    let del = document.getElementById('del')
+
+    function delSign(){
+        output.value = output.value.slice(0, -1)
+    }
+
+    del.addEventListener('click', delSign)
+
+    let equalsButton = document.querySelector("#equals")
+
+    function calculate(){
+        let calculations = eval(output.value)
+        // console.log(calculations)
+        // console.log(typeof(calculations))
+        output.value = calculations
+    }
+
+    equalsButton.addEventListener('click', calculate)
+
+  </script>
+
+</body>
+</html>
