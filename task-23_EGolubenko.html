@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <style>
+      #drawing{
+          /*width: 800px;*/
+          /*height: 600px;*/
+          border: 2px solid black;
+          background-color: white;
+      }
+      #image{
+        visibility: hidden;
+        transform: scale(0.5);
+        /*width: 100px;*/
+        /*height: auto;*/
+      }
+
+  </style>
+  <title>Изучаем HTML. Задание 23. Drawing</title>
+</head>
+<body>
+<canvas id="drawing" width="800" height="600"></canvas>
+<!--<img id="image" src="2021-04-08%2000.15.00.jpg">-->
+
+
+  <script>
+      let drawing = document.getElementById("drawing")
+      let image = document.getElementById('image')
+
+      window.onload = function(){
+          if (drawing && drawing.getContext){
+              let context = drawing.getContext('2d')
+              var sWidth = drawing.width;
+              var sHeight = drawing.height;
+
+              //first floor
+              context.beginPath();
+              context.translate(1.5, 1);
+              context.lineWidth = 3.5;
+              context.rect(sWidth/2-180,sHeight/2-20,sWidth/2-10,sHeight/2-5);
+              context.fillStyle = '#ed811e';
+              context.fill()
+              context.strokeRect(sWidth/2-180,sHeight/2-20,sWidth/2-10,sHeight/2-5);
+              // context.translate(10, 30);
+              context.closePath();
+
+              //chimney
+              context.beginPath();
+              context.rect(sWidth/2-140,60,60,180);
+              context.fillStyle = '#7e0001';
+              context.fill()
+              context.strokeRect(sWidth/2-140,60,60,180);
+              // context.translate(10, 50);
+              context.closePath();
+
+              //roof
+              context.beginPath();
+              context.moveTo(190,280);
+              context.lineTo(400,40);
+              context.lineTo(640,280);
+              context.lineTo(188,280);
+              context.strokeStyle = '#000';
+              context.stroke();
+              context.fillStyle = '#7e0001';
+              context.fill();
+              context.closePath();
+
+              //window
+            context.beginPath();
+            context.rect(270,390,110,110);
+            context.fillStyle = '#fff';
+            context.fill()
+            context.strokeRect(270,390,110,110);
+            context.closePath();
+
+            context.beginPath();
+            context.moveTo(270,445);
+            context.lineTo(380,445);
+            context.strokeStyle = '#000';
+            context.stroke();
+            context.closePath();
+
+            context.beginPath();
+            context.moveTo(325,390);
+            context.lineTo(325,500);
+            context.strokeStyle = '#000';
+            context.stroke();
+            context.closePath();
+
+            //door
+            context.beginPath();
+            context.rect(sWidth/2+50,350,120,225);
+            context.fillStyle = '#4b4b4b';
+            context.fill()
+            context.strokeRect(sWidth/2+50,350,120,225);
+            context.closePath();
+
+
+              // context.drawImage(image, -110 , -130)
+              // context.scale(0.1, 0.1)
+          }
+      }
+
+  </script>
+
+</body>
+</html>

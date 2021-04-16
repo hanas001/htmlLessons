@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <style>
+    table{
+      border-collapse: collapse;
+    }
+    th{
+      border: 3px solid black;
+      width: 120px;
+      height: 120px;
+      font-size: 60px;
+      font-family: Arial;
+
+    }
+  </style>
+  <title>Изучаем HTML. Задание 24. Крестики Нолики</title>
+</head>
+<body>
+<table id="crosses">
+  <tbody>
+  <tr>
+    <th id="0"></th>
+    <th id="1"></th>
+    <th id="2"></th>
+  </tr>
+  <tr>
+    <th id="3"></th>
+    <th id="4"></th>
+    <th id="5"></th>
+  </tr>
+  <tr>
+    <th id="6"></th>
+    <th id="7"></th>
+    <th id="8"></th>
+  </tr>
+  </tbody>
+</table>
+
+  <script>
+    let table = document.getElementById('crosses')
+    let oughtsAndCrosses = ['', '', '', '', '', '', '', '', '']
+
+    let currentCells = document.querySelectorAll("th")
+
+      function render() {
+        var i;
+        for (i = 0; i < oughtsAndCrosses.length; i++) {
+          currentCells[i].innerHTML = oughtsAndCrosses[i];
+          // console.log('rows', i)
+        }
+      }
+
+      let winCombinations = [
+              [0, 1, 2],
+              [3, 4, 5],
+              [6, 7, 8],
+              [0, 3, 6],
+              [1, 4, 7],
+              [2, 5, 8],
+              [0, 4, 8],
+              [2, 4, 6]
+      ]
+
+      table.addEventListener('click', readOperation)
+
+      function readOperation(event){
+        let cellId = event.target.id
+
+        // console.log(cellId)
+        let id = parseInt(cellId)
+        let flag = 'X'
+        oughtsAndCrosses[id] = flag
+
+        let rndNm = randomChoice()
+        // console.log('rnd nm first', rndNm)
+
+        while (oughtsAndCrosses[rndNm] != '' && tableLength() < len-1){
+          rndNm = randomChoice()
+          console.log('random choice', rndNm)
+        }
+
+        if (flag == 'X'){
+          flag = 'O'
+          oughtsAndCrosses[rndNm] = flag
+        }
+
+        console.log(oughtsAndCrosses)
+        console.log(tableLength())
+
+        render()
+      }
+
+      function randomChoice(){
+        let rand = Math.floor(Math.random() * 8)
+        return rand
+      }
+
+      function win(){
+        
+      }
+
+      let len = oughtsAndCrosses.length
+      function tableLength(){
+
+        let counter = 0
+        for (i = 0; i < len; i++){
+          if (oughtsAndCrosses[i] != ''){
+            counter += 1
+          }
+        }
+        console.log('counter', counter)
+        return counter
+        // console.log('length', len)
+      }
+  </script>
+
+</body>
+</html>

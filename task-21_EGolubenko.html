@@ -2,27 +2,55 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-<!--  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">-->
   <style>
+      /*:root * {*/
+      /*    !* Pause the animation *!*/
+      /*    animation-play-state: paused;*/
+      /*    !* Bind the animation to scroll *!*/
+      /*    animation-delay: calc(var(--scroll) * -1s);*/
+      /*    !* These last 2 properties clean up overshoot weirdness *!*/
+      /*    animation-iteration-count: 1;*/
+      /*    animation-fill-mode: both;*/
+      /*}*/
       body{
           font-family: "SF Pro TC", "SF Pro Text", "SF Pro Icons", "PingFang TC", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+          animation: body 1s linear;
       }
+      /*@keyframes body {*/
+      /*    to {*/
+      /*        !*background-color: rgb(19, 48, 97);*!*/
+      /*        transform: scale(0.5);*/
+      /*    }*/
+      /*}*/
       .topAll{
           /*width: 350px;*/
+          background-color: white;
           display: flex;
           flex-direction: row;
           justify-content: space-between;
-          /*align-content: space-between;*/
           padding-left: 4%;
           padding-right: 4%;
+          position: sticky;
+          position: -webkit-sticky;
+          top: 0;
+          border-bottom-style: solid;
+          border-bottom-width: 1px;
+
       }
       h1{
           font-size: 20px;
-          font-weight: normal;
+          font-weight: bold;
       }
       .left{
-          width: 75%;
+          width: 70%;
       }
+      .right{
+          display: flex;
+          flex-direction: row;
+          justify-content: space-between;
+          width: 30%;
+      }
+
       h2{
           font-size: 16px;
           color: #c8c8c8;
@@ -32,6 +60,12 @@
           font-size: 16px;
           color: #000;
           font-weight: lighter;
+          margin-top: 13px;
+      }
+      hr{
+          width: 92%;
+          /*position: sticky;*/
+          /*top: 0;*/
       }
       .buyButton{
           background-color: #0071e3;
@@ -42,6 +76,7 @@
           text-decoration: none;
           font-size: 14px;
           font-weight: lighter;
+          margin-top: 9px;
       }
       .bottom{
           display: flex;
@@ -49,6 +84,8 @@
           /*justify-content: space-between;*/
           align-content: space-between;
           text-align: center;
+          align-items: center;
+          /*width: 65%;*/
           padding-left: 4%;
           padding-right: 4%;
       }
@@ -60,16 +97,28 @@
           display: flex;
           flex-direction: column;
           justify-content: center;
-          /*width:50%;*/
+          width:110%;
           /*position: relative;*/
           /*top: -50px;*/
+          /*border: black solid 2px;*/
       }
       .homepod{
           display: flex;
           flex-direction: column;
           justify-content: center;
-          /*width:50%;*/
           margin-bottom: 60px;
+          /*border: black solid 2px;*/
+          transform: scale(1.1);
+          animation: homepod 1s linear;
+          animation-play-state: paused;
+          animation-delay: calc(var(--scroll) * -1s);
+          animation-iteration-count: 1;
+          animation-fill-mode: both;
+      }
+      @keyframes homepod {
+          to {
+              transform: scale(0.6);
+          }
       }
       p1{
           font-size: 58px;
@@ -80,6 +129,18 @@
           font-size: 18px;
           font-weight: bolder;
       }
+      p3{
+          padding-top: 40px;
+          font-size: 48px;
+          font-weight: bolder;
+          letter-spacing: 4px;
+      }
+      .rainbow-text{
+          background-image: linear-gradient(to right, #ff984a, #d071cd, #3aa4ff);
+          -webkit-background-clip: text;
+          /*color: transparent;*/
+          -webkit-text-fill-color: transparent;
+      }
   </style>
   <title>Изучаем HTML. Задание 21. Homepod mini</title>
 </head>
@@ -88,11 +149,12 @@
     <div class="left">
         <h1>HomePod mini</h1>
     </div>
-    <h2> Overview</h2>
-    <h3>Tech Specs</h3>
-    <button id="buyButton" class="buyButton">Buy</button>
+    <div class="right">
+        <h2> Overview</h2>
+        <h3>Tech Specs</h3>
+        <button id="buyButton" class="buyButton">Buy</button>
+    </div>
 </div>
-<hr>
 
 <div id="bottom" class="bottom">
     <div class="mini">
@@ -103,9 +165,20 @@
     </div>
     <p1>HomePod mini packs a punch.</p1>
     <p2>Watch the event ></p2>
+    <p3 class="rainbow-text">
+        Room-filling<br> sound.<br><br>
+        An intelligent<br> assistant.<br><br>
+        Control your<br> smart home.<br><br>
+        Private and<br>secure.<br><br>
+    </p3>
 </div>
 
+
   <script>
+      let homepodAnim = document.getElementById("homepod")
+      window.addEventListener('scroll', () => {
+          document.body.style.setProperty('--scroll',window.pageYOffset / (document.body.offsetHeight - window.innerHeight/2));
+      }, false);
 
   </script>
 

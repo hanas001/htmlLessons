@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <style>
+
+      .handlebar{
+          background-color: #cacaca;
+          position: absolute;
+          display: flex;
+          flex-direction: row;
+          justify-content: center;
+      }
+      .right{
+          /*rotation-point: 100% 50%;*/
+          /*rotation: 30deg;*/
+          transform: rotate(0deg);
+          transform-origin: center left;
+          /*animation-play-state: paused;*/
+          animation-fill-mode: both;
+      }
+      @keyframes right {
+          25%{
+              transform: rotate(-30deg);
+          }
+          50%{
+              transform: rotate(0deg);
+          }
+          75%{
+              transform: rotate(30deg);
+          }
+          to {
+              transform: rotate(0deg);
+          }
+      }
+
+      .left{
+          transform: rotate(0deg);
+          transform-origin: 100% 50%;
+          /*animation-play-state: paused;*/
+          animation-fill-mode: both;
+      }
+      @keyframes left {
+          25%{
+              transform: rotate(-30deg);
+          }
+          50%{
+              transform: rotate(0deg);
+          }
+          75%{
+               transform: rotate(30deg);
+           }
+          to {
+              transform: rotate(0deg);
+          }
+      }
+
+  </style>
+  <title>Изучаем HTML. Задание 22. Шевелящиеся усы</title>
+</head>
+<body>
+
+<div id="handlebar" class="handlebar">
+        <img id="left" class="left" src="handlebar-detail_1024x1024_L.png">
+        <img id="right" class="right" src="handlebar-detail_1024x1024_R.png">
+</div>
+
+
+  <script>
+      let leftHandlebar = document.getElementById("left")
+      let rightHandlebar = document.getElementById("right")
+
+      function moveLeftDown(){
+          leftHandlebar.style.animation = 'left 1s linear'
+      }
+
+      function moveRightDown(){
+          rightHandlebar.style.animation = 'right 1s linear'
+      }
+
+      function afterAnimation(){
+          leftHandlebar.style.animation = ''
+          rightHandlebar.style.animation = ''
+      }
+
+      leftHandlebar.addEventListener('click', moveLeftDown);
+      leftHandlebar.addEventListener('animationend', afterAnimation)
+
+      rightHandlebar.addEventListener('click', moveRightDown);
+      rightHandlebar.addEventListener('animationend', afterAnimation)
+
+  </script>
+
+</body>
+</html>
