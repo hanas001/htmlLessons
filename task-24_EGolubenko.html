@@ -6,13 +6,31 @@
     table{
       border-collapse: collapse;
     }
+    /*#crosses{*/
+    /*  disabled: true;*/
+    /*}*/
     th{
       border: 3px solid black;
       width: 120px;
       height: 120px;
       font-size: 60px;
       font-family: Arial;
-
+    }
+    #output{
+      width: 372px;
+      font-family: Arial;
+      font-size: 44px;
+      text-align: center;
+      /*border: 3px solid black;*/
+    }
+    #playAgain{
+      display: none;
+      /*align-content: center;*/
+      font-family: Arial;
+      font-size: 33px;
+      border-radius: 9px;
+      width: 372px;
+      background-color: coral;
     }
   </style>
   <title>Изучаем HTML. Задание 24. Крестики Нолики</title>
@@ -37,6 +55,8 @@
   </tr>
   </tbody>
 </table>
+<div id="output"></div>
+<button id="playAgain">Играть еще</button>
 
   <script>
     let table = document.getElementById('crosses')
@@ -76,7 +96,7 @@
         let rndNm = randomChoice()
         // console.log('rnd nm first', rndNm)
 
-        while (oughtsAndCrosses[rndNm] != '' && tableLength() < len-1){
+        while (oughtsAndCrosses[rndNm] != '' && tableLength() < len - 1){
           rndNm = randomChoice()
           console.log('random choice', rndNm)
         }
@@ -86,19 +106,39 @@
           oughtsAndCrosses[rndNm] = flag
         }
 
-        console.log(oughtsAndCrosses)
-        console.log(tableLength())
+        // console.log(oughtsAndCrosses)
+        // console.log(tableLength())
+
+        win()
 
         render()
       }
 
       function randomChoice(){
-        let rand = Math.floor(Math.random() * 8)
-        return rand
+        return Math.floor(Math.random() * 8)
       }
 
       function win(){
-        
+        let i, n = 0
+        let checks = ['X', 'O']
+
+        for (i = 0; i < checks.length; i++){
+          for (n = 0; n < winCombinations.length; n++){
+              // console.log('win combinations to try', winCombinations[n])
+              let itemWin = winCombinations[n]
+              if (oughtsAndCrosses[itemWin[0]] == oughtsAndCrosses[itemWin[1]] &&
+                  oughtsAndCrosses[itemWin[0]] == oughtsAndCrosses[itemWin[2]] &&
+                  oughtsAndCrosses[itemWin[0]] == checks[i]){
+                console.log('win combination', winCombinations[n])
+                output.innerHTML = checks[i] + '-ки выиграли'
+                table.disabled = true
+                output.style.display = 'table'
+                playAgain.style.display = 'table'
+                console.log('the winner is...', checks[i])
+                return
+              }
+              }
+            }
       }
 
       let len = oughtsAndCrosses.length
@@ -114,6 +154,16 @@
         return counter
         // console.log('length', len)
       }
+
+      let playAgain = document.getElementById('playAgain')
+    playAgain.addEventListener('click', restartGame)
+
+    function restartGame(){
+      oughtsAndCrosses = ['', '', '', '', '', '', '', '', '']
+      output.style.display = 'none'
+      playAgain.style.display = 'none'
+      render()
+    }
   </script>
 
 </body>
