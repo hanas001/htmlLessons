@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <style>
+    .square{
+      position: absolute;
+      width: 100px;
+      height: 100px;
+      background-color: #2787F5;
+    }
+
+    .invisible{
+      display: none;
+    }
+
+  </style>
+  <title>Изучаем HTML. Задание 25. Drag&drop</title>
+</head>
+<body>
+<div id="square" class="square" draggable="true"></div>
+
+<script>
+  let square = document.getElementById('square')
+
+  square.addEventListener('dragstart', dragStart)
+  square.addEventListener('dragend', dragEnd)
+
+  function dragStart() {
+    console.log('start')
+    this.className += ' square';
+    setTimeout(() => (this.className = 'invisible'), 0);
+    // this.className = 'invisible'
+  }
+
+  function dragEnd(e) {
+    e.preventDefault()
+    console.log('end')
+    this.className = 'square'
+    this.style.position = 'relative'
+    square.style.left = e.pageX + 'px';
+    square.style.top = e.pageY + 'px'
+  }
+
+</script>
+
+</body>
+</html>
