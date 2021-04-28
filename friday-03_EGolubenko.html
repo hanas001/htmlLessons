@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Изучаем HTML. Friday challenge</title>
+</head>
+<body>
+<div id="output"></div>
+<script>
+
+let arrayEven = [];
+
+for (let i = 0; i <= 100; i++){
+  if (i%2===0 && i > 0){
+  arrayEven.push(i);
+  }
+}
+console.log(arrayEven)
+
+let outputDiv = document.getElementById('output')
+outputDiv.innerHTML = arrayEven
+</script>
+
+</body>
+</html>

@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <style>
+    body{
+      font-family: Helvetica;
+      background-color: #fff;
+      /*margin-left: 40px;*/
+    }
+    .top{
+      display: flex;
+      flex-direction: row;
+      align-items: baseline;
+      justify-content: space-between;
+      background-color: #fff;
+      /*height: 50px;*/
+    }
+    .bottom{
+      display: flex;
+      flex-direction: column;
+      background-color: #eceef2;
+      z-index: 0;
+    }
+    .inner{
+      background: url(task-26/Sunny_Weather.jpg) no-repeat;
+      background-size: 700px;
+      padding-left: 30px;
+      background-color: #eceef2;
+      color: white;
+      display: flex;
+      /*display: none;*/
+      flex-direction: column;
+      align-content: space-around;
+      /*align-items: stretch;*/
+      /*border: black 1px dashed;*/
+      height: 370px;
+    }
+
+    .innerTwo{
+        /*background-size: 700px;*/
+        padding-left: 30px;
+        background-color: #eceef2;
+        color: black;
+        display: none;
+        /*display: flex;*/
+        flex-direction: column;
+        align-content: space-around;
+        /*align-items: stretch;*/
+        /*border: black 1px dashed;*/
+        height: 370px;
+        width: 700px;
+    }
+    .bgImage{
+      background: url(task-26/Sunny_Weather.jpg) no-repeat;
+      margin-left: -30px;
+      z-index: 1;
+      /*position: fixed;*/
+      max-width: 100%;
+      /*width: auto;*/
+      height: auto;
+      border: green 1px dashed;
+    }
+    .one{
+      display: flex;
+      flex-direction: column;
+      z-index: 2;
+      margin-top: 3%;
+    }
+    .two{
+      display: flex;
+      flex-direction: row;
+      align-content: center;
+      justify-content: left;
+      /*border: red 1px dashed;*/
+      /*margin-right: 20px;*/
+      /*padding-right: 20px;*/
+      margin-top: 5%;
+      z-index: 2;
+    }
+    .twoDotOne{
+      display: flex;
+      flex-direction: column;
+      /*align-items: stretch;*/
+      align-content: space-between;
+    }
+    .three{
+      display: flex;
+      flex-direction: row;
+      justify-content: left;
+      margin-top: 5%;
+      z-index: 2;
+    }
+    p{
+      font-size: 24px;
+      /*font-stretch: expanded;*/
+      font-weight: lighter;
+      letter-spacing: 3px;
+    }
+    h1:first-letter{
+      font-size: 200%;
+      color: red;
+    }
+    h2{
+      font-size: 300%;
+      font-weight: lighter;
+      /*margin-left: -40px;*/
+    }
+    h3{
+      font-weight: lighter;
+      font-size: 150%;
+      margin-right: 20px;
+    }
+    p1{
+      font-size: 28px;
+    }
+    p2{
+      color: #77afe4;
+      margin-top: 15px;
+      font-size: 24px;
+    }
+    p3{
+      font-size: 48px;
+      margin-right: 40px;
+    }
+    p4{
+      font-size: 22px;
+    }
+    p5{
+      margin-right: 90px;
+    }
+    .weatherCondition{
+      margin-right: 40px;
+      margin-top: 7px;
+      /*max-width: fit-content;*/
+      height: 100%;
+    }
+    .weatherNice{
+      display: flex;
+      width: 20%;
+      justify-items: baseline;
+    }
+    .forecast{
+      display: flex;
+      flex-direction: row;
+      justify-content: space-around;
+      /*width: 65%;*/
+      padding-left: 190px;
+      padding-right: 2%;
+    }
+
+    table{
+        border: black 1px solid;
+        border-collapse: collapse;
+        padding: 5px;
+        /*display: flex;*/
+        text-align: left;
+    }
+    th{
+        border-top: black 1px solid;
+        border-collapse: collapse;
+        /*padding-left: 10px;*/
+        padding-right: 10px;
+        /*display: table;*/
+        /*flex-direction: row;*/
+        text-align: left;
+        font-size: 18px;
+        font-weight: lighter;
+    }
+    td{
+        color: grey;
+        /*padding-left: 20px;*/
+        padding-right: 20px;
+        text-align: left;
+        font-size: 14px;
+    }
+    #today{
+        color: red;
+        }
+    .red{
+        color: red;
+    }
+
+  </style>
+
+
+  <title>Изучаем HTML. Задание 26. Прогноз погоды</title>
+</head>
+<body>
+<div class="top">
+  <div class="weatherNice">
+  <h1>Погода</h1>
+  <h2>Радует</h2>
+  </div>
+  <div class="forecast">
+  <h3 class="today" id="today">Прогноз на сегодня</h3>
+  <h3 class="week" id="week">Прогноз на неделю</h3>
+  </div>
+</div>
+<div class="bottom" id="bottom">
+  <p>Страна/Регион/Город</p>
+
+    <div class="inner" id="inner">
+<!--    <div class="bgImage">-->
+<!--    <img src="task-26/Sunny_Weather.jpg">-->
+<!--    </div>-->
+    
+    <div class="one">
+    <p1>Погода в Городе</p1>
+    <p2>Вчера в это время: +14</p2>
+    </div>
+    
+    <div class="two">
+      <p3>+13</p3>
+      <img class="weatherCondition" src="task-26/cloud-image.png">
+      <div class="twoDotOne">
+        <p4>Облачно с прояснениями</p4>
+        <p4>Ощущается как +13</p4>
+      </div>
+    </div>
+
+    <div class="three">
+      <p5>Ветер: 0.6 м.с</p5>
+      <p5>Влажность: 87%</p5>
+      <p5>Давление: 572 мм рт.ст.</p5>
+    </div>
+    </div>
+
+    <div class="innerTwo" id="innerTwo">
+        <!--    <div class="bgImage">-->
+        <!--    <img src="task-26/Sunny_Weather.jpg">-->
+        <!--    </div>-->
+
+        <div class="one">
+            <p1>Погода в Городе на неделю</p1>
+        </div>
+
+        <div class="two">
+            <table>
+                <tr>
+                    <th>Сегодня</th>
+                    <th>Вт</th>
+                    <th>Ср</th>
+                    <th>Чт</th>
+                    <th>Пт</th>
+                    <th class="red">Сб</th>
+                    <th class="red">Вс</th>
+                </tr>
+                <tr>
+                    <td>19 апр</td>
+                    <td>20 апр</td>
+                    <td>21 апр</td>
+                    <td>22 апр</td>
+                    <td>23 апр</td>
+                    <td>24 апр</td>
+                    <td>25 апр</td>
+                </tr>
+<!--            </table>-->
+
+<!--            <table>-->
+                <tr>
+                    <th>днем +25</th>
+                    <th>+26</th>
+                    <th>+27</th>
+                    <th>+27</th>
+                    <th>+26</th>
+                    <th>+27</th>
+                    <th>+25</th>
+                </tr>
+                <tr>
+                    <td>ночью +13</td>
+                    <td>+12</td>
+                    <td>+13</td>
+                    <td>+13</td>
+                    <td>+11</td>
+                    <td>+12</td>
+                    <td>+13</td>
+                </tr>
+            </table>
+        </div>
+    </div>
+
+</div>
+
+<script>
+  let todayForecast = document.getElementById('today');
+  let weekForecast = document.getElementById('week')
+  let todayWeatherWindow = document.getElementById('inner')
+  let weekWeatherWindow = document.getElementById('innerTwo')
+
+  todayForecast.addEventListener('click', weatherWeek)
+  // window.onload(weatherWeek)
+  weekForecast.addEventListener('click', weatherToday)
+
+  function weatherToday(){
+      todayWeatherWindow.style.display = 'none';
+      todayForecast.style.color = 'black'
+
+      weekForecast.style.color = 'red';
+      weekWeatherWindow.style.display = 'flex'
+  }
+
+  function weatherWeek(){
+      weekWeatherWindow.style.display = 'none';
+      weekForecast.style.color = 'black';
+
+      todayWeatherWindow.style.display = 'flex';
+      todayForecast.style.color = 'red';
+  }
+
+</script>
+
+</body>
+</html>

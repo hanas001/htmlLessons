@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <style>
+      body{
+          font-family: Helvetica;
+      }
+      .buttons-bar{
+          display: flex;
+          flex-direction: row;
+      }
+      button{
+          background-color: orange;
+          border-radius: 5px;
+      }
+
+  </style>
+
+
+  <title>Изучаем HTML. Задание 27. Tabs</title>
+</head>
+<body>
+<div class="buttons-bar">
+    <button id="buttonOne" class="buttons" onclick="openTabs('one')">Вкладка 1</button>
+    <button id="buttonTwo" class="buttons" onclick="openTabs('two')">Вкладка 2</button>
+    <button id="buttonThree" class="buttons" onclick="openTabs('three')">Вкладка 3</button>
+</div>
+<div id="one" class="tabs">
+    <h2>Вкладка один</h2>
+    <p>Какой-то текст, какой-то текст, какой-то текст, какой-то текст, какой-то текст</p>
+</div>
+
+<div id="two" class="tabs" style="display: none">
+    <h2>Вкладка два</h2>
+    <p>Другой-то текст, другой-то текст, другой-то текст, другой-то текст, другой-то текст</p>
+</div>
+
+<div id="three" class="tabs" style="display: none">
+    <h2>Вкладка три</h2>
+    <p>Еще-то текст, еще-то текст, еще-то текст, еще-то текст, еще-то текст</p>
+</div>
+
+
+<script>
+
+
+    function openTabs(tabName){
+        // console.log('function works')
+        let tabList = document.getElementsByClassName('tabs')
+        for (let i=0; i<tabList.length; i++){
+            tabList[i].style.display = 'none'
+        }
+        document.getElementById(tabName).style.display = 'block'
+    }
+
+    // document.getElementById('buttonOne').addEventListener('click', openTabs('one'))
+    // document.getElementById('buttonTwo').addEventListener('click', openTabs('two'))
+    // document.getElementById('buttonThree').addEventListener('click', openTabs('three'))
+
+</script>
+
+</body>
+</html>

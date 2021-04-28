@@ -3,17 +3,20 @@
 <head>
   <meta charset="UTF-8">
   <style>
+    .invisible{
+      display: none;
+      /*position: absolute;*/
+    }
     .square{
       position: absolute;
       width: 100px;
       height: 100px;
       background-color: #2787F5;
+      display: flex;
+      /*top: 0px;*/
+      /*left: 0px;*/
+      -webkit-align-self: center;
     }
-
-    .invisible{
-      display: none;
-    }
-
   </style>
   <title>Изучаем HTML. Задание 25. Drag&drop</title>
 </head>
@@ -23,23 +26,59 @@
 <script>
   let square = document.getElementById('square')
 
-  square.addEventListener('dragstart', dragStart)
-  square.addEventListener('dragend', dragEnd)
+  square.addEventListener('mousedown', dragStart)
 
-  function dragStart() {
+
+  function dragStart(e) {
     console.log('start')
-    this.className += ' square';
-    setTimeout(() => (this.className = 'invisible'), 0);
     // this.className = 'invisible'
+    let coords = positionElement(square)
+    let shiftX = e.pageX - coords.left
+    let shiftY = e.pageY - coords.top
+
+    square.style.position = 'absolute'
+    document.body.appendChild(square)
+    dragMove(e)
+
+    square.style.zIndex = 999;
+
+  function dragMove(e) {
+    // e.preventDefault()
+    console.log('move')
+    // this.className = 'square';
+
+    square.style.left = e.pageX - shiftX  + 'px';
+    square.style.top = e.pageY - shiftY + 'px';
   }
 
+  document.onmousemove = function(e) {
+    dragMove(e);
+  };
+
+  square.addEventListener('mouseup', dragEnd)
   function dragEnd(e) {
-    e.preventDefault()
+    // e.preventDefault()
+    // square.className = 'square'
     console.log('end')
-    this.className = 'square'
-    this.style.position = 'relative'
-    square.style.left = e.pageX + 'px';
-    square.style.top = e.pageY + 'px'
+
+    // square.style.left = e.pageX - 50  + 'px';
+    // square.style.top = e.pageY - 50 + 'px';
+
+    document.onmousemove = null
+    square.onmouseup = null
+  }
+  }
+
+  square.ondragstart = function() {
+    return false;
+  };
+
+  function positionElement(element){
+    let box = element.getBoundingClientRect()
+    return{
+      top: box.top + pageYOffset,
+      left: box.left + pageYOffset
+    }
   }
 
 </script>
