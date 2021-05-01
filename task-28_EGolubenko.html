@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+<style>
+    body {
+        font-family: Helvetica;
+        display: grid;
+        grid-template-areas:
+            "left header right"
+            "left contacts right"
+            "left email right"
+            "left birth right"
+            "left subscribe right"
+            "left footer right";
+        /*grid-template-rows: 1fr;*/
+        grid-template-rows: 10% 100px 100px 120px 80px 100px;
+        grid-template-columns: 25% 1fr 25%;
+        /*grid-gap: 10px;*/
+        /*height: 100vh;*/
+        grid-row-gap: 10px;
+        grid-column-gap: 10px;
+        /*margin: 0;*/
+    }
+    #registrationForm > div{
+        padding: 1.8em;
+        background: gold;
+    }
+    #left{
+        /*background: #572266;*/
+        grid-area: left;
+        background-color: rebeccapurple;
+    }
+    #right{
+        /*background: #572266;*/
+        grid-area: right;
+        background-color: rebeccapurple;
+    }
+    #header{
+        grid-area: header;
+        font-size: 28px;
+        font-weight: lighter;
+    }
+    #contacts{
+        grid-area: contacts;
+    }
+    #email{
+        grid-area: email;
+    }
+    #birth{
+        grid-area: birth;
+    }
+    #subscribe{
+        grid-area: subscribe;
+    }
+    #footer{
+        grid-area: footer;
+    }
+    button{
+        background-color: #1c8200;
+        width: 400px;
+        height: 50px;
+        font-size: 28px;
+        color: #eff5ee;
+        text-align: center;
+    }
+    input{
+        background: #eceef2;
+    }
+</style>
+    <title>Изучаем HTML. Задание 28. Grid layout</title>
+</head>
+
+<body>
+    <div id="left">Left</div>
+    <div id="registrationForm">
+
+    <h1 id="header">Регистрация в системе</h1>
+
+        <div id="contacts">
+        <p1>Контакты</p1>
+        <p2>Имя</p2>
+        <input>
+        </div>
+
+        <div id="email">
+        <p2>E-mail</p2>
+        <input>
+        </div>
+
+        <div id="birth">
+        <p1>Дата рождения</p1>
+        <div>
+            <p2>День</p2>
+            <input>
+            <p2>Месяц</p2>
+            <input>
+            <p2>Год</p2>
+            <input>
+        </div>
+
+        <div id="subscribe">
+            <input type="checkbox">
+            <p3>Подписаться на рассылку</p3>
+        </div>
+
+        <button id="footer">Регистрация</button>
+    </div>
+    </div>
+    <div id="right">Right</div>
+</body>
