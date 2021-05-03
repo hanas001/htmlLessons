@@ -19,12 +19,17 @@
         /*grid-gap: 10px;*/
         /*height: 100vh;*/
         grid-row-gap: 10px;
-        grid-column-gap: 10px;
+        /*grid-column-gap: 10px;*/
         /*margin: 0;*/
     }
     #registrationForm > div{
-        padding: 1.8em;
-        background: gold;
+        padding: 0.9em;
+        /*background: gold;*/
+        /*padding-left: 20%;*/
+        /*padding-right: 12%;*/
+        margin-left: 10%;
+        margin-right: 10%;
+        width: 475px;
     }
     #left{
         /*background: #572266;*/
@@ -49,12 +54,27 @@
     }
     #birth{
         grid-area: birth;
+        margin-bottom: 30px;
+    }
+    #birth > div{
+        /*margin-bottom: 30px;*/
+        padding-top: 20px;
     }
     #subscribe{
         grid-area: subscribe;
     }
     #footer{
         grid-area: footer;
+    }
+    #day-month-year{
+        display: grid;
+        grid-auto-flow: column;
+        /*border: black 1px dashed;*/
+    }
+    #day-month-year > div{
+        /*grid-auto-flow: column;*/
+        /*padding-bottom: 30px;*/
+
     }
     button{
         background-color: #1c8200;
@@ -64,39 +84,71 @@
         color: #eff5ee;
         text-align: center;
     }
-    input{
+    .inputBig{
         background: #eceef2;
+        width: 400px;
+        height: 50px;
+    }
+    .inputSmall{
+        background: #eceef2;
+        width: 80px;
+        height: 50px;
+    }
+    p1{
+        font-size: 24px;
+        font-weight: lighter;
+        /*marging-bottom: 40px;*/
+    }
+    p2{
+        font-size: 18px;
+        font-weight: lighter;
+        /*margin-top: 20px;*/
+    }
+    h1{
+        font-size: 32px;
+        font-weight: lighter;
     }
 </style>
     <title>Изучаем HTML. Задание 28. Grid layout</title>
 </head>
 
 <body>
-    <div id="left">Left</div>
+    <div id="left"></div>
     <div id="registrationForm">
 
-    <h1 id="header">Регистрация в системе</h1>
+        <div id="header">
+        <h1>Регистрация в системе</h1>
+        </div>
 
         <div id="contacts">
-        <p1>Контакты</p1>
-        <p2>Имя</p2>
-        <input>
+        <p1>Контакты</p1><br><br>
+        <p2>Имя</p2><br>
+        <input class="inputBig">
         </div>
 
         <div id="email">
-        <p2>E-mail</p2>
-        <input>
+        <p2>E-mail</p2><br>
+        <input class="inputBig">
         </div>
 
         <div id="birth">
         <p1>Дата рождения</p1>
-        <div>
-            <p2>День</p2>
-            <input>
-            <p2>Месяц</p2>
-            <input>
-            <p2>Год</p2>
-            <input>
+        <div id="day-month-year">
+            <div id="day">
+            <p2>День</p2><br>
+            <input class="inputSmall">
+            </div>
+
+            <div id="month">
+            <p2>Месяц</p2><br>
+            <input class="inputSmall">
+            </div>
+
+            <div id="year">
+            <p2>Год</p2><br>
+            <input class="inputSmall">
+            </div>
+        </div>
         </div>
 
         <div id="subscribe">
@@ -104,8 +156,11 @@
             <p3>Подписаться на рассылку</p3>
         </div>
 
-        <button id="footer">Регистрация</button>
+        <div id="footer">
+        <button>Регистрация</button>
+        </div>
+
     </div>
     </div>
-    <div id="right">Right</div>
+    <div id="right"></div>
 </body>

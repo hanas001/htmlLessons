@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+<style>
+    body{
+        background-color: black;
+        color: white;
+        font-family: Helvetica;
+        padding-left: 10%;
+        padding-right: 10%;
+    }
+    #outer{
+        display: grid;
+        grid-template-areas: "left right";
+        grid-template-rows: 35% 65%;
+        grid-template-columns: 1fr;
+        /*grid-row-gap: 10px;*/
+        grid-column-gap: 30px;
+    }
+    #left{
+        grid-area: left;
+        display: flex;
+        flex-direction: column;
+        /*width: 30%;*/
+    }
+    #right{
+        grid-area: right;
+        display: flex;
+        flex-direction: column;
+    }
+    #imageRound{
+        /*width: 120px;*/
+        /*height: 120px;*/
+        display: flex;
+
+    }
+    .rounded{
+        border-radius: 50%;
+        width: 100px;
+        height: 100px;
+    }
+    #postTop{
+        display: flex;
+        flex-direction: row;
+    }
+    #postTopRight{
+        display: flex;
+        flex-direction: column;
+        /*align-content: space-around;*/
+        justify-content: space-around;
+    }
+    img{
+        width: 100%;
+        height: auto;
+        /*border-radius: 50%;*/
+    }
+    #imageLeft{
+        display: flex;
+        width: 200px;
+        height: 100px;
+    }
+    button{
+        color: #fff;
+        background-color: #660000;
+        border: 1px solid #be2321;
+        border-radius: 12px;
+    }
+    #search{
+        width: 32px;
+        margin-left: 199px;
+        margin-top: -19px;
+    }
+input{
+    border-radius: 12px;
+    height: 14px;
+}
+p1{
+    font-size: 16px;
+}
+p2{
+    font-size: 12px;
+}
+#imageLeft{
+    width: 220px;
+    height: 100%;
+}
+a{
+    color: blue;
+}
+#postTop{
+    background-color: #310101;
+}
+#postLower{
+    background-color: #730101;
+}
+p3{
+    color: #1265c5;
+    text-transform: uppercase;
+}
+p9{
+    color: #fd9800;
+    font-size: 16px;
+}
+#postSocial{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+p7{
+    color: #166a36;
+}
+</style>
+    <title>Изучаем HTML. Задание 29</title>
+</head>
+
+<body>
+    <div id="outer">
+        <div id="left">
+            <input type="text" placeholder="   Поискать">
+            <button id="search">S</button>
+            <br>
+            <p1>Добро пожаловать, котятки!</p1>
+            <br>
+            <p2>Кажется кое-кто не залогинился</p2>
+            <br>
+            <button id="login">ЛОГИИН</button>
+            <br>
+            <br>
+            <div id="imageLeft">
+            <img src="task-29_Egolubenko/zombie_patrol_man.png">
+            </div>
+            <a href="">Вступить по этой ссылке</a>
+        </div>
+
+        <div id="right">
+            <p3>Домашняя > Новости > наши новости и события > пандемический пост-апокалипсис</p3>
+            <p1>пандемический зомби-пост-апокалипсис</p1>
+            <div id="postTop">
+                <div id="imageRound">
+                    <img class="rounded" src="task-29_Egolubenko/emma_stoun.jpg">
+                </div>
+                <div id="postTopRight">
+                    <p9>Джессика89</p9>
+                    <p4>27 апреля 2021</p4>
+                </div>
+            </div>
+                    <div id="postLower">
+                        <p5>Ребята, мы знаем, насколько серьезна пандемия в Индии и других регионах.
+                            Зомби повсюду. Пожалуйста, подпишитесь на эту ветку, чтобы помочь нам помогать друг другу.
+                            Мы объединяем ресурсы и помогаем друг другу выживать. У нас также есть канал Slack #pandemic-help для желающих поболтать.
+                            Спасибо всем. Думаю о вас...
+                        </p5>
+                        <div id="postSocial">
+                            <div id="postSocialLeft">
+                                <p6>Зацени:</p6>
+                                <p7> Как тред</p7>
+                                <p7>|</p7>
+                                <p7>Как список</p7>
+                            </div>
+                            <div id="postSocialRight">
+                                <p8>Y +4 N</p8>
+                            </div>
+                        </div>
+                    </div>
+            <div id="comments">
+
+            </div>
+
+
+        </div>
+    </div>
+</body>
